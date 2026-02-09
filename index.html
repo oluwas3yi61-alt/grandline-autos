@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grandline Autos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Header / Branding -->
+<header>
+  <h1>Grandline Autos</h1>
+  <p>No. 34 Ajayi Crescent, Opposite Grandline Hotel, Abuja</p>
+  <nav>
+    <a href="#inventory">Inventory</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#vehicle-form">Register Vehicle</a>
+  </nav>
+</header>
+
+<!-- Authentication -->
+<section id="auth" class="auth-section">
+  <h2>User Portal</h2>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h3>Login</h3>
+      <input type="email" id="loginEmail" placeholder="Email">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button onclick="loginUser()">Login</button>
+    </div>
+    <div class="auth-box">
+      <h3>Sign Up</h3>
+      <input type="text" id="signupName" placeholder="Full Name">
+      <input type="email" id="signupEmail" placeholder="Email">
+      <input type="password" id="signupPassword" placeholder="Password">
+      <button onclick="signupUser()">Create Account</button>
+    </div>
+  </div>
+</section>
+
+<!-- Vehicle Inventory -->
+<section id="inventory">
+  <h2>Vehicle Inventory</h2>
+  <input type="text" id="searchCar" placeholder="Search by Brand or Model" onkeyup="searchCar()">
+  <div class="car-grid" id="carGrid">
+    <!-- Car cards will be dynamically injected here -->
+  </div>
+</section>
+
+<!-- Services & Trust Center -->
+<section id="services">
+  <h2>Our Services</h2>
+  <p>We provide top-quality car sales and interstate delivery services across Nigeria.</p>
+  <p>We ensure transparency, timeliness, and professional handling of your vehicles.</p>
+</section>
+
+<section id="reviews">
+  <h2>Customer Reviews</h2>
+  <div class="reviews">
+    <p>"Fast delivery and excellent service!" – Aisha</p>
+    <p>"The vehicle quality was exceptional." – Emeka</p>
+    <p>"Highly recommend Grandline Autos for trusted car delivery." – Tunde</p>
+  </div>
+</section>
+
+<!-- Vehicle Credential / Registration Form -->
+<section id="vehicle-form">
+  <h2>Vehicle Registration Form</h2>
+  <form id="credentialForm" onsubmit="submitForm(event)">
+    <fieldset>
+      <legend>Personal Information</legend>
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="text" id="location" placeholder="Current Location" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Communication</legend>
+      <input type="tel" id="contactPrimary" placeholder="Primary Contact" required>
+      <input type="tel" id="contactSecondary" placeholder="Secondary Contact">
+    </fieldset>
+
+    <fieldset>
+      <legend>Legal/ID</legend>
+      <input type="text" id="nin" placeholder="National ID Number" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Car Credentials</legend>
+      <select id="selectedCar" required>
+        <option value="">-- Select Your Car --</option>
+      </select>
+      <input type="date" id="deliveryDate" required>
+      <select id="deliveryMethod">
+        <option value="road">Road Delivery</option>
+        <option value="express">Express Delivery</option>
+      </select>
+    </fieldset>
+
+    <button type="submit">Submit Registration</button>
+  </form>
+  <div id="formSuccess" class="success-message"></div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Grandline Autos | All Rights Reserved</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
